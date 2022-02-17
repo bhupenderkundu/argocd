@@ -5,7 +5,7 @@ metadata:
   labels:
     name: webapp
 spec:
-  replicas: 5
+  replicas: 1
   minReadySeconds: 30
   strategy:
     type: Recreate
