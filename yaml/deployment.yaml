@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  labels:
+    name: webapp
+spec:
+  replicas: 5
+  minReadySeconds: 30
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      name: dpod
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: container
+          image: nginx
